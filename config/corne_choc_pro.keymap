@@ -35,34 +35,35 @@
     };
 
     macros {
-        // Estonian umlauts via Linux Unicode input (Ctrl+Shift+U + hex code + Space)
-        uml_a: uml_a {  // Ä - U+00C4
+        // Estonian umlauts via Linux Unicode input (Ctrl+Shift+U + hex code)
+        // Lowercase by default: ä, õ, ü, ö
+        uml_a: uml_a {  // ä - U+00E4
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&macro_tap &kp LC(LS(U)) &kp N0 &kp N0 &kp C &kp N4 &kp SPACE>;
+            bindings = <&macro_tap &kp LC(LS(U)) &kp E &kp N4 &kp SPACE>;
         };
-        uml_o_tilde: uml_o_tilde {  // Õ - U+00D5
+        uml_o_tilde: uml_o_tilde {  // õ - U+00F5
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&macro_tap &kp LC(LS(U)) &kp N0 &kp N0 &kp D &kp N5 &kp SPACE>;
+            bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp N5 &kp SPACE>;
         };
-        uml_u: uml_u {  // Ü - U+00DC
+        uml_u: uml_u {  // ü - U+00FC
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&macro_tap &kp LC(LS(U)) &kp N0 &kp N0 &kp D &kp C &kp SPACE>;
+            bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp C &kp SPACE>;
         };
-        uml_o: uml_o {  // Ö - U+00D6
+        uml_o: uml_o {  // ö - U+00F6
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&macro_tap &kp LC(LS(U)) &kp N0 &kp N0 &kp D &kp N6 &kp SPACE>;
+            bindings = <&macro_tap &kp LC(LS(U)) &kp F &kp N6 &kp SPACE>;
         };
     };
 
@@ -75,12 +76,12 @@
             // | ESC |  B  |  L  |  D  |  W  |  Z  | MUTE | PP  |  -  |  F  |  O  |  U  |  J  | DEL |
             // | TAB |  N  |  R  |  T  |  S  |  G  | LALT | RALT|  Y  |  H  |  A  |  E  |  I  |  '  |
             // | SHFT|  Q  |  X  |  M  |  C  |  V  |             |  K  |  P  |  ,  |  .  |  /  | SHFT|
-            //                   | GUI | L1  | SPC |             | BSPC| L2  | ENT |
+            //                   | CTRL | L1  | SPC |             | BSPC| L2  | GUI|
             bindings = <
                 &kp ESC   &kp B &kp L &kp D    &kp W &kp Z      &kp C_MUTE &kp C_PP &kp MINUS &kp F &kp O     &kp U   &kp J    &kp DEL
                 &kp TAB   &kp N &kp R &kp T    &kp S &kp G      &kp LALT   &kp RALT &kp Y     &kp H &kp A     &kp E   &kp I    &kp SQT
                 &kp LSHFT &kp Q &kp X &kp M    &kp C &kp V                           &kp K     &kp P &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                      &kp LGUI &mo 1 &kp SPACE                       &kp BSPC  &mo 2 &kp RET
+                                      &kp LCTRL &mo 1 &kp SPACE                       &kp BSPC  &mo 2 &kp LGUI
             >;
         };
 
@@ -88,28 +89,28 @@
             display-name = "Navigate";
             // ------------------------------------------------------------------------------------------
             // | F1  | F2  | F3  | F4  | F5  | F6  | LCTRL| RCTRL| F7  | F8  | F9  | F10 | F11 | F12 |
-            // | ESC | GUI | ALT | CTRL| SHFT| HOME| LALT | RALT | LEFT| DOWN| UP  |RIGHT| END |     |
+            // | ESC | GUI | ALT | CTRL| SHFT| HOME| LALT | RALT | LEFT| DOWN| UP  |RIGHT| END |TRANS|
             // | SHFT|  1  |  2  |  3  |  4  |  5  |              |  6  |  7  |  8  |  9  |  0  | ESC |
-            //                   | GUI | L1  | SPC |              | BSPC| L3  | DEL |
+            //                   | CTRL | L1  | SPC |              | BSPC| L3  | GUI |
             bindings = <
                 &kp F1    &kp F2    &kp F3    &kp F4     &kp F5     &kp F6    &kp LCTRL &kp RCTRL &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
                 &kp ESC   &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &kp HOME  &kp LALT  &kp RALT  &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp END &trans
                 &kp LSHFT &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6   &kp N7   &kp N8 &kp N9    &kp N0  &kp ESC
-                                              &kp LGUI   &trans     &kp SPACE                     &kp BSPC &mo 3    &kp DEL
+                                              &trans     &trans     &kp SPACE                     &kp BSPC &mo 3    &trans
             >;
         };
 
         symbol_layer {
             display-name = "Symbols";
             // ------------------------------------------------------------------------------------------
-            // | ESC |  ?  |  "  |  '  |  #  |  +  | LCTRL| RCTRL|  $  |  &  |  %  |  ~  |  \  | DEL |
-            // | TAB |  !  | ()  | []  | {}  |  -  | LALT | RALT |  |  |  =  |  _  |  `  | PgUp| PgDn|
-            // | SHFT|  @  |  <  |  >  |  ^  |  *  |              |  :  |  ;  |  ,  |  .  |  /  | SHFT|
+            // | ESC |  @  |  "  |  '  |  #  |  +  | LCTRL| RCTRL|  $  |  &  |  %  |  ~  |  \  | DEL |
+            // | TAB |  ?  | ()  | []  | {}  |  -  | LALT | RALT |  |  |  =  |  _  |  `  | PgUp| PgDn|
+            // | SHFT|  !  |  <  |  >  |  ^  |  *  |             |  :  |  ;  |  ,  |  .  |  /  | SHFT|
             //                   | GUI | L3  | SPC |              | BSPC| L3  | DEL |
             bindings = <
-                &kp ESC   &kp QMARK &kp DQT   &kp SQT  &kp HASH  &kp PLUS   &kp LCTRL &kp RCTRL &kp DLLR  &kp AMPS  &kp PRCNT &kp TILDE &kp BSLH  &kp DEL
-                &kp TAB   &kp EXCL  &paren    &bracket &brace    &kp MINUS  &kp LALT  &kp RALT  &kp PIPE  &kp EQUAL &kp UNDER &kp GRAVE &kp PG_UP &kp PG_DN
-                &kp LSHFT &kp AT    &kp LT    &kp GT   &kp CARET &kp ASTRK                      &kp COLON &kp SEMI  &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                &kp ESC   &kp AT &kp DQT   &kp SQT  &kp HASH  &kp PLUS   &kp LCTRL &kp RCTRL &kp DLLR  &kp AMPS  &kp PRCNT &kp TILDE &kp BSLH  &kp DEL
+                &kp TAB   &kp QMARK  &paren    &bracket &brace    &kp MINUS  &kp LALT  &kp RALT  &kp PIPE  &kp EQUAL &kp UNDER &kp GRAVE &kp PG_UP &kp PG_DN
+                &kp LSHFT &kp EXCL    &kp LT    &kp GT   &kp CARET &kp ASTRK                      &kp COLON &kp SEMI  &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
                                               &kp LGUI &mo 3     &kp SPACE                      &kp BSPC  &mo 3     &kp DEL
             >;
         };
@@ -118,13 +119,13 @@
             display-name = "Adjust";
             // ------------------------------------------------------------------------------------------
             // | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 | LCTRL| RCTRL|UNLCK|     |     |     |     | BOOT|
-            // | RGBTG| RGB+| RGB-| BRI+| BRI-|UNLCK| LALT | RALT |  Ä  |  Õ  |  Ü  |  Ö  |UNLCK| SLEEP|
+            // | RGBTG| RGB+| RGB-| BRI+| BRI-|UNLCK| LALT | RALT |  ä  |  õ  |  ü  |  ö  |UNLCK| SLEEP|
             // | RGBEF| HUE+| HUE-| SAT+| SAT-|UNLCK|              | PREV| VOL-| MUTE| VOL+| NEXT| PLAY|
             //                    | GUI | L3  | SPC |              | BSPC| L3  | DEL |
             bindings = <
-                &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL &kp RCTRL &studio_unlock &trans       &trans     &trans &trans         &bootloader
-                &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_UP     &kp C_BRI_DN     &studio_unlock  &kp LALT  &kp RALT  &uml_a         &uml_o_tilde &uml_u     &uml_o &studio_unlock &kp K_SLEEP
-                &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &studio_unlock                      &kp C_PREV     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &kp C_NEXT &kp C_PP
+                &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL &kp RCTRL &studio_unlock &trans       &trans     &trans         &trans         &bootloader
+                &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_UP     &kp C_BRI_DN     &studio_unlock  &kp LALT  &kp RALT  &studio_unlock &uml_a       &uml_o_tilde &uml_u         &uml_o         &kp K_SLEEP
+                &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &studio_unlock                      &kp C_PREV     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp C_NEXT     &kp C_PP
                                                                    &kp LGUI         &trans           &kp SPACE                          &kp BSPC       &trans       &kp DEL
             >;
         };
