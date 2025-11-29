@@ -126,7 +126,7 @@
                 &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL &kp RCTRL &studio_unlock &trans       &trans     &trans         &trans         &bootloader
                 &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_UP     &kp C_BRI_DN     &studio_unlock  &kp LALT  &kp RALT  &studio_unlock &uml_a       &uml_o_tilde &uml_u         &uml_o         &kp K_SLEEP
                 &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &studio_unlock                      &kp C_PREV     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp C_NEXT     &kp C_PP
-                                                                   &kp LGUI         &tran s           &kp SPACE                          &kp BSPC       &trans       &kp DEL
+                                                                   &kp LGUI         &trans            &kp SPACE                          &kp BSPC       &trans       &kp DEL
             >;
         };
     };
