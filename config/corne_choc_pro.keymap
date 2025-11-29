@@ -89,12 +89,12 @@
             display-name = "Navigate";
             // ------------------------------------------------------------------------------------------
             // | F1  | F2  | F3  | F4  | F5  | F6  | LCTRL| RCTRL| F7  | F8  | F9  | F10 | F11 | F12 |
-            // | ESC | GUI | ALT | CTRL| SHFT| HOME| LALT | RALT | LEFT| DOWN| UP  |RIGHT| END |TRANS|
+            // | ESC | GUI | ALT | CTRL| SHFT| HOME| LALT | RALT | HOME | LEFT| DOWN| UP  |RIGHT|END|
             // | SHFT|  1  |  2  |  3  |  4  |  5  |              |  6  |  7  |  8  |  9  |  0  | ESC |
             //                   | CTRL | L1  | SPC |              | BSPC| L3  | GUI |
             bindings = <
                 &kp F1    &kp F2    &kp F3    &kp F4     &kp F5     &kp F6    &kp LCTRL &kp RCTRL &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
-                &kp ESC   &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &kp HOME  &kp LALT  &kp RALT  &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp END &trans
+                &kp ESC   &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &kp HOME  &kp LALT  &kp RALT  &kp HOME &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp END
                 &kp LSHFT &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6   &kp N7   &kp N8 &kp N9    &kp N0  &kp ESC
                                               &trans     &trans     &kp SPACE                     &kp BSPC &mo 3    &trans
             >;
@@ -106,12 +106,12 @@
             // | ESC |  @  |  "  |  '  |  #  |  +  | LCTRL| RCTRL|  $  |  &  |  %  |  ~  |  \  | DEL |
             // | TAB |  ?  | ()  | []  | {}  |  -  | LALT | RALT |  |  |  =  |  _  |  `  | PgUp| PgDn|
             // | SHFT|  !  |  <  |  >  |  ^  |  *  |             |  :  |  ;  |  ,  |  .  |  /  | SHFT|
-            //                   | GUI | L3  | SPC |              | BSPC| L3  | DEL |
+            //                   | GUI | L3  | SPC |              | BSPC| L2  | DEL |
             bindings = <
                 &kp ESC   &kp AT &kp DQT   &kp SQT  &kp HASH  &kp PLUS   &kp LCTRL &kp RCTRL &kp DLLR  &kp AMPS  &kp PRCNT &kp TILDE &kp BSLH  &kp DEL
                 &kp TAB   &kp QMARK  &paren    &bracket &brace    &kp MINUS  &kp LALT  &kp RALT  &kp PIPE  &kp EQUAL &kp UNDER &kp GRAVE &kp PG_UP &kp PG_DN
                 &kp LSHFT &kp EXCL    &kp LT    &kp GT   &kp CARET &kp ASTRK                      &kp COLON &kp SEMI  &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                                              &kp LGUI &mo 3     &kp SPACE                      &kp BSPC  &mo 3     &kp DEL
+                                              &kp LGUI &mo 3     &kp SPACE                      &kp BSPC  &mo 2     &kp DEL
             >;
         };
 
@@ -126,7 +126,7 @@
                 &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL &kp RCTRL &studio_unlock &trans       &trans     &trans         &trans         &bootloader
                 &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_UP     &kp C_BRI_DN     &studio_unlock  &kp LALT  &kp RALT  &studio_unlock &uml_a       &uml_o_tilde &uml_u         &uml_o         &kp K_SLEEP
                 &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &studio_unlock                      &kp C_PREV     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp C_NEXT     &kp C_PP
-                                                                   &kp LGUI         &trans           &kp SPACE                          &kp BSPC       &trans       &kp DEL
+                                                                   &kp LGUI         &tran s           &kp SPACE                          &kp BSPC       &trans       &kp DEL
             >;
         };
     };
