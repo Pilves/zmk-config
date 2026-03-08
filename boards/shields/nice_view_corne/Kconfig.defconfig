@@ -1,4 +1,4 @@
-# Copyright (c) 2024 The ZMK Contributors
+# Copyright (c) 2023 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
 if SHIELD_NICE_VIEW_CORNE
@@ -31,7 +31,7 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     imply NICE_VIEW_CORNE_WIDGET_STATUS
 
 config NICE_VIEW_CORNE_WIDGET_STATUS
-    bool "Custom nice!view Corne status widget"
+    bool "Custom nice!view status widget"
     select LV_FONT_MONTSERRAT_16
     select LV_USE_IMG
     select LV_USE_CANVAS
