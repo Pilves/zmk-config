@@ -268,7 +268,7 @@ static void mod_status_update_cb(struct mod_status_state state) {
 
 static struct mod_status_state mod_status_get_state(const zmk_event_t *eh) {
     return (struct mod_status_state){
-        .mods = zmk_hid_get_explicit_mods() | zmk_hid_get_implicit_mods(),
+        .mods = zmk_hid_get_explicit_mods(),
         // caps_word detection requires dedicated API — left as future enhancement
         .caps_word_active = false,
     };

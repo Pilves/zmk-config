@@ -145,6 +145,15 @@ static void create_key_label(lv_obj_t *parent, lv_obj_t **out, int col, int row,
     *out = lbl;
 }
 
+/* ---------- forward declarations for listener inits ---------- */
+
+static void widget_layer_status_init(void);
+static void widget_battery_status_init(void);
+static void widget_peripheral_status_init(void);
+#if defined(CONFIG_ZMK_BLE)
+static void widget_output_status_init(void);
+#endif
+
 /* ---------- init ---------- */
 
 int zmk_widget_right_status_init(struct zmk_widget_right_status *widget, lv_obj_t *parent) {
